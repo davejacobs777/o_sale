@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/new', to: 'users#new', as: 'new_user'
+  get '/signup', to: 'users#new'
+  resources :users, only: [:create]
+
+  #resources :users, only: [:create]
+
   root "products#index"
 
   #get '/products', to: 'products#index'
