@@ -18,7 +18,10 @@
       </div>
 
       <div class="float-right btn-edit-del">
-        <%= link_to "Delete", "#", class: "btn btn-outline-danger btn-lg" %>
+        <%= link_to "Delete", product_path(@product),
+                    method: :delete,
+                    data: {confirm: "Are you sure you want to delete?"},
+                    class: "btn btn-outline-danger btn-lg" %>
       </div>
 
       <div class="btn-edit-del">
