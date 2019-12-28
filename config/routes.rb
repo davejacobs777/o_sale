@@ -14,6 +14,13 @@ Rails.application.routes.draw do
 
   root "products#index"
 
+  #resources :products
+
+  resources :products do
+    resources :comments, only: [:create]
+  end
+  # comments route nested within the products routes
+
   #get '/products', to: 'products#index'
   #get '/products/new', to: 'products#new', as: 'new_product'
   #get '/products/:id', to: 'products#show', as: 'product'
@@ -22,7 +29,7 @@ Rails.application.routes.draw do
   #patch '/products/:id', to: 'products#update'
   #delete '/products/:id', to: 'products#destroy'
 
-  resources :products
 end
 
 # $ rails routes -c products
+# http://localhost:3000/rails/info/routes

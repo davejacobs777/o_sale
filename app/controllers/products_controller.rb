@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-
+    @comment = @product.comments.build  # automatically assign to comment object
+    @comments = @product.comments
   end
 
   def new

@@ -10,6 +10,8 @@ class Product < ApplicationRecord
   }
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  # when we delete a product all the associated comments are deleted too
 
   def owned_by?(owner)
     user == owner
